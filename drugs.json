@@ -5,7 +5,15 @@
 "food":"Can be taken with or without food",
 "pregnancy":"Generally safe",
 "lactation":"Compatible",
-"notes":"Do not exceed recommended dose"
+"notes":"Do not exceed 4 g/day"
+},
+{
+"name":"Augmentin",
+"active":"Amoxicillin + Clavulanic Acid",
+"food":"Take after meals",
+"pregnancy":"Generally safe",
+"lactation":"Compatible",
+"notes":"May cause diarrhea"
 },
 {
 "name":"Concor",
@@ -14,5 +22,61 @@
 "pregnancy":"Use only if prescribed",
 "lactation":"Consult physician",
 "notes":"Monitor heart rate"
+},
+{
+"name":"Glucophage",
+"active":"Metformin",
+"food":"Take with meals",
+"pregnancy":"Consult physician",
+"lactation":"Generally compatible",
+"notes":"May cause GI upset"
+},
+{
+"name":"Cataflam",
+"active":"Diclofenac Potassium",
+"food":"Take after food",
+"pregnancy":"Avoid in third trimester",
+"lactation":"Generally compatible",
+"notes":"May irritate stomach"
+},
+{
+"name":"Brufen",
+"active":"Ibuprofen",
+"food":"Take after food",
+"pregnancy":"Avoid in third trimester",
+"lactation":"Compatible",
+"notes":"May cause gastric irritation"
+},
+{
+"name":"Ventolin",
+"active":"Salbutamol",
+"food":"No significant food interaction",
+"pregnancy":"Generally safe",
+"lactation":"Compatible",
+"notes":"May cause tremor"
+},
+{
+"name":"Nexium",
+"active":"Esomeprazole",
+"food":"Take before meals",
+"pregnancy":"Consult physician",
+"lactation":"Consult physician",
+"notes":"Best before breakfast"
+},
+{
+"name":"Controloc",
+"active":"Pantoprazole",
+"food":"Take before meals",
+"pregnancy":"Consult physician",
+"lactation":"Consult physician",
+"notes":"Best before breakfast"
+},
+{
+"name":"Crestor",
+"active":"Rosuvastatin",
+"food":"Can be taken with or without food",
+"pregnancy":"Contraindicated",
+"lactation":"Avoid",
+"notes":"Monitor liver function"
 }
 ]
