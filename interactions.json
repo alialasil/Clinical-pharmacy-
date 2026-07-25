@@ -1,1 +1,14 @@
-
+[
+{
+"drug":"Warfarin",
+"food":"Spinach",
+"result":"Use caution",
+"description":"Vitamin K may reduce anticoagulant effect"
+},
+{
+"drug":"Atorvastatin",
+"food":"Grapefruit",
+"result":"Avoid",
+"description":"May increase drug concentration"
+}
+]
