@@ -237,19 +237,25 @@ d => d.name.toLowerCase() === drugName.toLowerCase()
 
 if(found){
 
-alert(
-"Drug: " + found.name +
-"\n\nActive Ingredient: " + found.active +
-"\n\nFood Advice: " + found.food
-);
+document.getElementById("result").innerHTML = `
 
-}else{
+<div style="
+background:white;
+padding:20px;
+margin-top:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+">
 
-alert("Drug Not Found");
+<h2>${found.name}</h2>
 
-}
+<p><b>Active Ingredient:</b> ${found.active}</p>
 
-}
+<p><b>Food Advice:</b> ${found.food}</p>
+
+</div>
+
+`;
 
 </script>
 </body>
