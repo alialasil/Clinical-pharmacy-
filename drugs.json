@@ -1,13 +1,19 @@
-[
 {
 "name":"Panadol",
 "active":"Paracetamol",
-"food":"Can be taken with or without food",
-"pregnancy":"Generally safe",
-"lactation":"Compatible",
-"notes":"Do not exceed 4 g/day"
-},
-{
+
+"patient_ar":"يمكن تناول الدواء مع الطعام أو بدونه",
+
+"warning_ar":"لا تتجاوز الجرعة الموصوفة",
+
+"professional_en":"Can be taken with or without food",
+
+"pregnancy_en":"Generally safe",
+
+"lactation_en":"Compatible",
+
+"notes_en":"Do not exceed 4 g/day"
+}
 "name":"Augmentin",
 "active":"Amoxicillin + Clavulanic Acid",
 "food":"Take after meals",
