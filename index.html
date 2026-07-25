@@ -84,6 +84,20 @@ font-size:18px;
 cursor:pointer;
 }
 
+#result{
+margin-top:20px;
+}
+
+.result-card{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+max-width:700px;
+margin:auto;
+text-align:left;
+}
+
 .container{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -96,18 +110,6 @@ background:white;
 padding:25px;
 border-radius:20px;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
-
-.card h2{
-margin-bottom:15px;
-}
-
-.card ul{
-padding-left:20px;
-}
-
-.card li{
-margin-bottom:10px;
 }
 
 .patient{
@@ -156,12 +158,18 @@ text-align:center;
 
 <div class="search-box">
 
-<input type="text"
+<input
+type="text"
+id="drugInput"
 placeholder="Search Drug Name">
 
-<button onclick="searchDrug()">Search</button>
+<button onclick="searchDrug()">
+Search
+</button>
 
 </div>
+
+<div id="result"></div>
 
 </section>
 
@@ -200,18 +208,14 @@ placeholder="Search Drug Name">
 
 <div class="about">
 
-<h2>About the Author</h2>
+<h2>About NutriRx</h2>
 
 <p>
-
-Ali Mohamed Alasil is a PharmD Clinical Pharmacy graduate.
-
-NutriRx is a free educational initiative dedicated to providing reliable drug and nutrition information for pharmacists, healthcare professionals and patients.
-
+NutriRx is a free educational initiative dedicated to helping patients and healthcare professionals understand drug-food interactions and medication safety.
 </p>
 
 </div>
-<div id="result"></div>
+
 <footer>
 
 © 2026 NutriRx
@@ -221,42 +225,73 @@ NutriRx is a free educational initiative dedicated to providing reliable drug an
 Created by Ali Mohamed Alasil
 
 </footer>
+
 <script>
 
 async function searchDrug(){
 
-let drugName = document.querySelector("input").value;
+let drugName =
+document.getElementById("drugInput").value.trim();
 
-let response = await fetch("drugs.json");
+let result =
+document.getElementById("result");
 
-let drugs = await response.json();
+try{
 
-let found = drugs.find(
+let response =
+await fetch("drugs.json");
+
+let drugs =
+await response.json();
+
+let found =
+drugs.find(
 d => d.name.toLowerCase() === drugName.toLowerCase()
 );
 
 if(found){
 
-document.getElementById("result").innerHTML = `
-
-<div style="
-background:white;
-padding:20px;
-margin-top:20px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-">
+result.innerHTML = `
+<div class="result-card">
 
 <h2>${found.name}</h2>
 
-<p><b>Active Ingredient:</b> ${found.active}</p>
+<p>
+<b>Active Ingredient:</b>
+${found.active}
+</p>
 
-<p><b>Food Advice:</b> ${found.food}</p>
+<p>
+<b>Food Advice:</b>
+${found.food}
+</p>
 
 </div>
-
 `;
 
+}else{
+
+result.innerHTML = `
+<div class="result-card">
+<h2>Drug Not Found</h2>
+</div>
+`;
+
+}
+
+}catch(error){
+
+result.innerHTML = `
+<div class="result-card">
+<h2>Error Loading Database</h2>
+</div>
+`;
+
+}
+
+}
+
 </script>
+
 </body>
 </html>
