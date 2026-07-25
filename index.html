@@ -56,6 +56,7 @@ body{
 </style>
 
 </head>
+
 <body>
 
 <div class="header">
@@ -142,6 +143,47 @@ NutriRx is a free initiative dedicated to supporting patients and healthcare pro
 © 2026 NutriRx | Created by Ali Mohamed Alasil
 
 </div>
+<h2>Drug Search Demo</h2>
 
+<input type="text" id="drugName" placeholder="Enter drug name">
+
+<button onclick="searchDrug()">Search</button>
+
+<div id="result"></div>
+
+<script>
+const drugs = {
+  "panadol": {
+    active: "Paracetamol",
+    food: "Can be taken with or without food"
+  },
+  "augmentin": {
+    active: "Amoxicillin + Clavulanic Acid",
+    food: "Take after meals to reduce stomach upset"
+  },
+  "concor": {
+    active: "Bisoprolol",
+    food: "Can be taken with food or on an empty stomach"
+  },
+  "glucophage": {
+    active: "Metformin",
+    food: "Take with meals"
+  }
+};
+
+function searchDrug() {
+  let name = document.getElementById("drugName").value.toLowerCase();
+  let result = document.getElementById("result");
+
+  if (drugs[name]) {
+    result.innerHTML =
+      "<h3>" + name + "</h3>" +
+      "<p><b>Active Ingredient:</b> " + drugs[name].active + "</p>" +
+      "<p><b>Food Advice:</b> " + drugs[name].food + "</p>";
+  } else {
+    result.innerHTML = "<p>Drug not found.</p>";
+  }
+}
+</script>
 </body>
 </html>
