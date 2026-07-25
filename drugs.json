@@ -10,3 +10,21 @@
     "notes":"Do not exceed 4 g/day"
   }
 ]
+,
+{
+name:"Augmentin",
+
+active:"Amoxicillin + Clavulanic Acid",
+
+patient_ar:"يفضل تناول الدواء بعد الطعام",
+
+warning_ar:"يجب إكمال مدة العلاج كاملة",
+
+professional_en:"Take after meals",
+
+pregnancy:"Generally safe",
+
+lactation:"Compatible",
+
+notes:"May cause diarrhea"
+}
