@@ -1,1 +1,27 @@
-
+[
+  {
+    "name":"Panadol",
+    "active":"Paracetamol",
+    "food":"Can be taken with or without food"
+  },
+  {
+    "name":"Augmentin",
+    "active":"Amoxicillin + Clavulanic Acid",
+    "food":"Take after meals"
+  },
+  {
+    "name":"Glucophage",
+    "active":"Metformin",
+    "food":"Take with meals"
+  },
+  {
+    "name":"Concor",
+    "active":"Bisoprolol",
+    "food":"Can be taken with or without food"
+  },
+  {
+    "name":"Cataflam",
+    "active":"Diclofenac Potassium",
+    "food":"Take after food"
+  }
+]
