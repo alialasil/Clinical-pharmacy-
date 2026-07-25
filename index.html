@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,183 +7,220 @@
 <title>NutriRx</title>
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    padding:0;
-    background:#f5f7fa;
-    color:#333;
+background:#f4f7fb;
+color:#333;
 }
 
-.header{
-    text-align:center;
-    background:white;
-    padding:30px;
+header{
+background:white;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
-.header img{
-    width:180px;
-    border-radius:50%;
-    border:4px solid #0d6efd;
+.logo{
+font-size:32px;
+font-weight:bold;
+color:#0b7d74;
 }
 
-.header h1{
-    color:#0d6efd;
-    margin-top:15px;
+.hero{
+padding:40px 20px;
+text-align:center;
+background:linear-gradient(135deg,#e9f9f7,#eef7ff);
+margin:20px;
+border-radius:20px;
 }
 
-.section{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
+.hero img{
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid #0b7d74;
+}
+
+.hero h1{
+margin-top:15px;
+font-size:40px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:18px;
+}
+
+.search-box{
+margin-top:25px;
+}
+
+.search-box input{
+width:70%;
+max-width:500px;
+padding:15px;
+border-radius:12px;
+border:1px solid #ccc;
+font-size:18px;
+}
+
+.search-box button{
+padding:15px 25px;
+background:#0b7d74;
+color:white;
+border:none;
+border-radius:12px;
+font-size:18px;
+cursor:pointer;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+padding:25px;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    margin:15px 0;
-    border-radius:12px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.footer{
-    text-align:center;
-    background:#0d6efd;
-    color:white;
-    padding:20px;
-    margin-top:20px;
+.card h2{
+margin-bottom:15px;
 }
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin-bottom:10px;
+}
+
+.patient{
+border-top:6px solid #1fa86b;
+}
+
+.professional{
+border-top:6px solid #2470ff;
+}
+
+.about{
+background:white;
+margin:25px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+footer{
+margin-top:30px;
+background:#083d3a;
+color:white;
+padding:30px;
+text-align:center;
+}
+
 </style>
-
 </head>
 
 <body>
 
-<div class="header">
+<header>
+<div class="logo">NutriRx</div>
+<div>Clinical Pharmacy Guide</div>
+</header>
 
-<img src="IMG-20260605-WA0034.jpg" alt="Ali Mohamed Alasil">
+<section class="hero">
 
-<h1>NutriRx</h1>
+<img src="IMG-20260605-WA0034.jpg">
 
-<p><b>Smart Drug & Food Interaction Platform</b></p>
-
-<h2>Ali Mohamed Alasil</h2>
+<h1>Ali Mohamed Alasil</h1>
 
 <p>PharmD Clinical Pharmacy Graduate</p>
 
 <p>Founder of NutriRx</p>
 
-</div>
+<div class="search-box">
 
-<div class="section">
+<input type="text"
+placeholder="Search Drug Name">
 
-<div class="card">
-<h2>Welcome</h2>
-
-<p>
-Welcome to NutriRx.
-A free educational platform designed to help patients, pharmacists, and healthcare professionals understand drug-food interactions and improve medication safety.
-</p>
+<button>Search</button>
 
 </div>
 
-<div class="card">
+</section>
 
-<h2>👨‍👩‍👧‍👦 Patient Portal</h2>
+<div class="container">
 
-<button>Drug & Food Interactions</button><br><br>
-<button>Medication Instructions</button><br><br>
-<button>Pregnancy & Lactation</button><br><br>
-<button>Food Restrictions</button>
+<div class="card patient">
+
+<h2>👨‍👩‍👧‍👦 بوابة المرضى</h2>
 
 <ul>
-<li>Drug & Food Interactions</li>
-<li>Medication Instructions</li>
-<li>Food Restrictions</li>
-<li>Pregnancy & Lactation Information</li>
+<li>التداخلات بين الدواء والغذاء</li>
+<li>طريقة استخدام الدواء</li>
+<li>الحمل والرضاعة</li>
+<li>الأطعمة الممنوعة مع الأدوية</li>
+<li>نصائح الاستخدام الآمن</li>
 </ul>
 
 </div>
 
-<div class="card">
+<div class="card professional">
 
 <h2>👨‍⚕️ Healthcare Professional Portal</h2>
 
-<button>Drug-Drug Interactions</button><br><br>
-<button>Drug-Food Interactions</button><br><br>
-<button>Clinical Calculators</button><br><br>
-<button>Clinical Pharmacy Resources</button>
-
 <ul>
-<li>Clinical Pharmacy Resources</li>
 <li>Drug-Drug Interactions</li>
 <li>Drug-Food Interactions</li>
 <li>Clinical Calculators</li>
-<li>Nutrition Support</li>
-<li>Renal & Hepatic Dose Adjustment</li>
+<li>Renal Dose Adjustment</li>
+<li>Hepatic Dose Adjustment</li>
+<li>Clinical Guidelines</li>
 </ul>
 
 </div>
 
-<div class="card">
+</div>
+
+<div class="about">
 
 <h2>About the Author</h2>
 
 <p>
+
 Ali Mohamed Alasil is a PharmD Clinical Pharmacy graduate.
-NutriRx is a free initiative dedicated to supporting patients and healthcare professionals through evidence-based pharmaceutical and nutritional information.
+
+NutriRx is a free educational initiative dedicated to providing reliable drug and nutrition information for pharmacists, healthcare professionals and patients.
+
 </p>
 
 </div>
 
-</div>
+<footer>
 
-<div class="footer">
+© 2026 NutriRx
 
-© 2026 NutriRx | Created by Ali Mohamed Alasil
+<br><br>
 
-</div>
-<h2>Drug Search Demo</h2>
+Created by Ali Mohamed Alasil
 
-<input type="text" id="drugName" placeholder="Enter drug name">
+</footer>
 
-<button onclick="searchDrug()">Search</button>
-
-<div id="result"></div>
-
-<script>
-const drugs = {
-  "panadol": {
-    active: "Paracetamol",
-    food: "Can be taken with or without food"
-  },
-  "augmentin": {
-    active: "Amoxicillin + Clavulanic Acid",
-    food: "Take after meals to reduce stomach upset"
-  },
-  "concor": {
-    active: "Bisoprolol",
-    food: "Can be taken with food or on an empty stomach"
-  },
-  "glucophage": {
-    active: "Metformin",
-    food: "Take with meals"
-  }
-};
-
-function searchDrug() {
-  let name = document.getElementById("drugName").value.toLowerCase();
-  let result = document.getElementById("result");
-
-  if (drugs[name]) {
-    result.innerHTML =
-      "<h3>" + name + "</h3>" +
-      "<p><b>Active Ingredient:</b> " + drugs[name].active + "</p>" +
-      "<p><b>Food Advice:</b> " + drugs[name].food + "</p>";
-  } else {
-    result.innerHTML = "<p>Drug not found.</p>";
-  }
-}
-</script>
 </body>
 </html>
