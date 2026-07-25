@@ -265,43 +265,49 @@ d => d.name.toLowerCase() === drugName.toLowerCase()
 
 if(found){
 
+let mode =
+document.querySelector('input[name="mode"]:checked').value;
+
+if(mode=="patient"){
+
 result.innerHTML = `
+
 <div class="result-card">
 
 <h2>${found.name}</h2>
 
 <p>
-<b>Active Ingredient:</b>
-${found.active}
+✅ ${found.patient_ar}
 </p>
 
-<p><b>Food Advice:</b> ${found.food}</p>
-
-<p><b>Pregnancy:</b> ${found.pregnancy}</p>
-
-<p><b>Lactation:</b> ${found.lactation}</p>
-
-<p><b>Notes:</b> ${found.notes}</p>
+<p>
+⚠ ${found.warning_ar}
+</p>
 
 </div>
+
 `;
 
 }else{
 
 result.innerHTML = `
+
 <div class="result-card">
-<h2>Drug Not Found</h2>
+
+<h2>${found.name}</h2>
+
+<p><b>Active Ingredient:</b> ${found.active}</p>
+
+<p><b>Food Advice:</b> ${found.professional_en}</p>
+
+<p><b>Pregnancy:</b> ${found.pregnancy_en}</p>
+
+<p><b>Lactation:</b> ${found.lactation_en}</p>
+
+<p><b>Notes:</b> ${found.notes_en}</p>
+
 </div>
-`;
 
-}
-
-}catch(error){
-
-result.innerHTML = `
-<div class="result-card">
-<h2>Error Loading Database</h2>
-</div>
 `;
 
 }
