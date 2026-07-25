@@ -159,7 +159,7 @@ text-align:center;
 <input type="text"
 placeholder="Search Drug Name">
 
-<button>Search</button>
+<button onclick="searchDrug()">Search</button>
 
 </div>
 
@@ -221,6 +221,36 @@ NutriRx is a free educational initiative dedicated to providing reliable drug an
 Created by Ali Mohamed Alasil
 
 </footer>
+<script>
 
+async function searchDrug(){
+
+let drugName = document.querySelector("input").value;
+
+let response = await fetch("drugs.json");
+
+let drugs = await response.json();
+
+let found = drugs.find(
+d => d.name.toLowerCase() === drugName.toLowerCase()
+);
+
+if(found){
+
+alert(
+"Drug: " + found.name +
+"\n\nActive Ingredient: " + found.active +
+"\n\nFood Advice: " + found.food
+);
+
+}else{
+
+alert("Drug Not Found");
+
+}
+
+}
+
+</script>
 </body>
 </html>
