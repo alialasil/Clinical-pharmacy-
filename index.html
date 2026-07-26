@@ -132,4 +132,167 @@ Patient / مريض
 <br><br>
 
 <label>
-<input type="radio" name="mode" value="
+<input type="radio" name="mode" value="professional">
+Healthcare Professional
+</label>
+
+</div>
+
+<input
+type="text"
+id="drugInput"
+placeholder="Enter Drug Name">
+
+<button onclick="searchDrug()">
+Search
+</button>
+
+<div id="result"></div>
+
+</div>
+
+<div class="card">
+
+<h2>👨‍👩‍👧‍👦 Patient Portal</h2>
+
+<p>
+بحث مبسط للمرضى باللغة العربية.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>👨‍⚕️ Healthcare Professional Portal</h2>
+
+<p>
+Clinical information for pharmacists and healthcare professionals.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 NutriRx
+
+<br><br>
+
+Created by Ali Mohamed Alasil
+
+</footer>
+
+<script>
+
+const drugs = [
+
+{
+name:"Panadol",
+active:"Paracetamol",
+patient_ar:"يمكن تناول الدواء مع الطعام أو بدونه",
+warning_ar:"لا تتجاوز الجرعة الموصوفة",
+professional_en:"Can be taken with or without food",
+pregnancy:"Generally safe",
+lactation:"Compatible",
+notes:"Do not exceed 4 g/day"
+},
+
+{
+name:"Concor",
+active:"Bisoprolol",
+patient_ar:"يمكن تناوله مع الطعام أو بدونه",
+warning_ar:"لا توقف الدواء فجأة",
+professional_en:"Can be taken with or without food",
+pregnancy:"Use only if prescribed",
+lactation:"Consult physician",
+notes:"Monitor heart rate"
+},
+
+{
+name:"Augmentin",
+active:"Amoxicillin + Clavulanic Acid",
+patient_ar:"يفضل تناول الدواء بعد الطعام",
+warning_ar:"يجب إكمال مدة العلاج كاملة",
+professional_en:"Take after meals",
+pregnancy:"Generally safe",
+lactation:"Compatible",
+notes:"May cause diarrhea"
+}
+
+];
+
+function searchDrug(){
+
+let drugName =
+document.getElementById("drugInput").value.trim();
+
+let mode =
+document.querySelector('input[name="mode"]:checked').value;
+
+let result =
+document.getElementById("result");
+
+let found =
+drugs.find(
+d => d.name.toLowerCase() === drugName.toLowerCase()
+);
+
+if(!found){
+
+result.innerHTML = `
+<div class="result">
+Drug Not Found
+</div>
+`;
+
+return;
+
+}
+
+if(mode==="patient"){
+
+result.innerHTML = `
+
+<div class="result">
+
+<h3>${found.name}</h3>
+
+<p>${found.patient_ar}</p>
+
+<p>⚠ ${found.warning_ar}</p>
+
+</div>
+
+`;
+
+}else{
+
+result.innerHTML = `
+
+<div class="result">
+
+<h3>${found.name}</h3>
+
+<p><b>Active Ingredient:</b> ${found.active}</p>
+
+<p><b>Food Advice:</b> ${found.professional_en}</p>
+
+<p><b>Pregnancy:</b> ${found.pregnancy}</p>
+
+<p><b>Lactation:</b> ${found.lactation}</p>
+
+<p><b>Notes:</b> ${found.notes}</p>
+
+</div>
+
+`;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
