@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NutriRx</title>
 
 <style>
-body{
-font-family:Arial,sans-serif;
-background:#f4f7fb;
+
+*{
 margin:0;
 padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f7fb;
 }
 
 header{
@@ -18,6 +24,23 @@ background:#0b7d74;
 color:white;
 padding:20px;
 text-align:center;
+}
+
+.hero{
+text-align:center;
+padding:30px;
+}
+
+.hero img{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #0b7d74;
+}
+
+.hero h1{
+margin-top:15px;
 }
 
 .container{
@@ -29,45 +52,77 @@ padding:20px;
 .card{
 background:white;
 padding:20px;
+margin-top:20px;
 border-radius:15px;
 box-shadow:0 2px 10px rgba(0,0,0,.1);
-margin-top:20px;
 }
 
-input{
-width:70%;
+.mode{
+margin-bottom:20px;
+}
+
+input[type=text]{
+width:100%;
 padding:12px;
 border:1px solid #ccc;
 border-radius:10px;
+margin-top:10px;
 }
 
 button{
-padding:12px 20px;
-border:none;
 background:#0b7d74;
 color:white;
+padding:12px 20px;
+border:none;
 border-radius:10px;
 cursor:pointer;
+margin-top:10px;
 }
 
-#result{
+.result{
 margin-top:20px;
+padding:15px;
+background:#eef9f7;
+border-radius:10px;
 }
+
+footer{
+background:#083d3a;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
 </style>
 
 </head>
+
 <body>
 
 <header>
+
 <h1>NutriRx</h1>
-<p>Drug & Food Interaction Platform</p>
+
+<p>Drug & Food Information Platform</p>
+
 </header>
+
+<section class="hero">
+
+<img src="IMG-20260605-WA0034.jpg">
+
+<h1>Ali Mohamed Alasil</h1>
+
+<p>PharmD Clinical Pharmacy Graduate</p>
+
+</section>
 
 <div class="container">
 
 <div class="card">
 
-<h2>Choose Mode</h2>
+<div class="mode">
 
 <label>
 <input type="radio" name="mode" value="patient" checked>
@@ -77,134 +132,4 @@ Patient / مريض
 <br><br>
 
 <label>
-<input type="radio" name="mode" value="professional">
-Healthcare Professional
-</label>
-
-</div>
-
-<div class="card">
-
-<h2>Drug Search</h2>
-
-<input type="text" id="drugInput" placeholder="Enter Drug Name">
-
-<button onclick="searchDrug()">
-Search
-</button>
-
-<div id="result"></div>
-
-</div>
-
-</div>
-
-<script>
-
-conconst drugs = [
-
-{
-name:"Panadol",
-active:"Paracetamol",
-patient_ar:"يمكن تناول الدواء مع الطعام أو بدونه",
-warning_ar:"لا تتجاوز الجرعة الموصوفة",
-professional_en:"Can be taken with or without food",
-pregnancy:"Generally safe",
-lactation:"Compatible",
-notes:"Do not exceed 4 g/day"
-},
-
-{
-name:"Concor",
-active:"Bisoprolol",
-patient_ar:"يمكن تناوله مع الطعام أو بدونه",
-warning_ar:"لا توقف الدواء فجأة",
-professional_en:"Can be taken with or without food",
-pregnancy:"Use only if prescribed",
-lactation:"Consult physician",
-notes:"Monitor heart rate"
-},
-
-{
-name:"Augmentin",
-active:"Amoxicillin + Clavulanic Acid",
-patient_ar:"يفضل تناول الدواء بعد الطعام",
-warning_ar:"يجب إكمال مدة العلاج كاملة",
-professional_en:"Take after meals",
-pregnancy:"Generally safe",
-lactation:"Compatible",
-notes:"May cause diarrhea"
-}
-
-];
-function searchDrug(){
-
-let drugName =
-document.getElementById("drugInput").value.trim();
-
-let result =
-document.getElementById("result");
-
-let mode =
-document.querySelector('input[name="mode"]:checked').value;
-
-let found =
-drugs.find(
-d => d.name.toLowerCase() === drugName.toLowerCase()
-);
-
-if(!found){
-
-result.innerHTML=
-"<h3>Drug Not Found</h3>";
-
-return;
-
-}
-
-if(mode==="patient"){
-
-result.innerHTML = `
-
-<div class="card">
-
-<h2>${found.name}</h2>
-
-<p>${found.patient_ar}</p>
-
-<p>⚠ ${found.warning_ar}</p>
-
-</div>
-
-`;
-
-}else{
-
-result.innerHTML = `
-
-<div class="card">
-
-<h2>${found.name}</h2>
-
-<p><b>Active Ingredient:</b> ${found.active}</p>
-
-<p><b>Food Advice:</b> ${found.professional_en}</p>
-
-<p><b>Pregnancy:</b> ${found.pregnancy}</p>
-
-<p><b>Lactation:</b> ${found.lactation}</p>
-
-<p><b>Notes:</b> ${found.notes}</p>
-
-</div>
-
-`;
-
-}
-
-}
-
-</script>
-
-</body>
-</html>
+<input type="radio" name="mode" value="
